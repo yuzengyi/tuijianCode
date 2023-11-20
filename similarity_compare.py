@@ -76,7 +76,6 @@ def compute_similarity(ratings_matrix, method="pearson"):
                 intersection = np.sum(bool_matrix.iloc[i] & bool_matrix.iloc[j])
                 union = np.sum(bool_matrix.iloc[i] | bool_matrix.iloc[j])
                 similarity_matrix.iloc[i, j] = intersection / union if union != 0 else 0
-
         return similarity_matrix
     else:
         raise ValueError("Unsupported similarity method: %s" % method)
